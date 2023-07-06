@@ -100,14 +100,12 @@ const validateLastName = () => {
 
 const validateTelephone = () => {
   const telPattern = /(^8|7|\+7)((\d{10})|(\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}))/
-  console.log(telPattern.test(telephone.value))
   if (telephone.value.trim().length === 0) {
     currentError.value = 'Телефон - обязательное поле'
     return false
   }
 
   if (!telPattern.test(telephone.value)) {
-    console.log('here')
     currentError.value = 'Введите российский телефонный номер'
     return false
   }
@@ -117,7 +115,6 @@ const validateTelephone = () => {
 
 const validateEmail = () => {
   const emailPattern = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/
-  console.log('here')
 
   if (email.value.trim().length === 0) {
     currentError.value = 'Почта - обязательное поле'
